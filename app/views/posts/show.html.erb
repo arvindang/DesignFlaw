@@ -1,0 +1,35 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <div class = 'title'><%= @post.title %></div>
+</p>
+
+<p><%= @post.created_at.strftime("%b %e %Y, %l:%M %p") %></p>
+
+
+<p>
+  <%= markdown(@post.blog_post) %>
+</p>
+
+
+<% if User.find_by_id(session[:id]) %>
+	<%= link_to 'Edit', edit_post_path(@post) %> |
+	<%= link_to 'Back', posts_path %> |
+	<%= link_to 'Destroy', post_url, :confirm => 'Are you sure?', :method => :delete %>
+<% else %>
+	<%= nil %>
+<% end %>
+
+<br/><br/>
+
+
+<%- unless @post.prev_post == nil %>
+	<%= link_to "Older Post", post_path(@post.prev_post) %>
+<% end %> | 
+
+<% unless @post.next_post == nil %>
+	<%= link_to "Newer Post", post_path(@post.next_post) %>
+<% end %>
+	
+	

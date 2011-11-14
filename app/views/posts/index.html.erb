@@ -1,0 +1,30 @@
+
+<% if User.find_by_id(session[:id]) %>
+	<%= link_to 'New Post', new_post_path, :id => "add_post_link" %>
+	<% else %>
+	<%= nil %>
+<% end %>
+
+<% if User.find_by_id(session[:id]) %>
+<%= render 'form' %>
+<% end %>
+
+<hr/>
+
+
+<% @posts.each do |post| %>
+	<div id = 'post_body'>
+
+			<div class ='title'><%= link_to post.title, post %></div>
+				<br/>
+			<div class ='post_time'><%= post.created_at.strftime("%b %e %Y, %l:%M %p") %></div>
+				<br/>
+			<div class ='post_text'><%= markdown(post.blog_post) %></div>
+		<br/>
+		<hr/>
+
+	</div>
+<% end %>
+
+<div class = 'paginate'><%= paginate @posts, :left => 1, :right => 3 %>
+</div>
