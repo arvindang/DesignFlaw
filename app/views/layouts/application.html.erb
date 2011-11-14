@@ -7,7 +7,7 @@
 	<%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-	<%= auto_discovery_link_tag(:rss, "http://localhost:3000/posts.rss") %>
+	<%= auto_discovery_link_tag(:rss, "http://designflaw.net/posts.rss") %>
 	<link href='http://fonts.googleapis.com/css?family=Shanti' rel='application' type='text/css'>
 </head>
 
@@ -16,6 +16,8 @@
 	
 <div class = 'header'><%= link_to 'DesignFlaw', posts_url %></div>
 <h3>A blog about coding, design, and the written word.</h3>
+
+<a href="http://about.me/arvindang">About Me</a> | <a href="http://twitter.com/arvindang">Tweet Me</a> |
 
 <% flash.each do |key, value| %>	
 <div class = 'notice'><%= value %></div>
