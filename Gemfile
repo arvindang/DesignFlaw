@@ -21,6 +21,14 @@ gem 'kaminari'
 
 gem 'redcarpet'
 
+group :production do
+	gem 'pg'
+end
+
+group :development do
+	gem 'sqlite3'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
