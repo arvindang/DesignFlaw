@@ -121,8 +121,6 @@ GEM
       multi_json (~> 1.0.0)
       multi_xml (~> 0.4.0)
       simple_oauth (~> 0.1.5)
-    twitter-text (1.4.13)
-      activesupport
     tzinfo (0.3.31)
     uglifier (1.0.4)
       execjs (>= 0.3.0)
@@ -143,5 +141,4 @@ DEPENDENCIES
   sass-rails (~> 3.1.4)
   sqlite3
   twitter
-  twitter-text
   uglifier (>= 1.0.3)
