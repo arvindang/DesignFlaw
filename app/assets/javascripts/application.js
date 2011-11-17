@@ -13,4 +13,10 @@ $(function(){
 		$("#new_post").slideToggle();
 		event.preventDefault();
 	});
+
+	// $("#tweets").val(function(event) {
+	// 	$("#").fade();
+	// 	event.preventDefault();
+	// });
+
 });

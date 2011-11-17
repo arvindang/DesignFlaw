@@ -13,24 +13,40 @@
 
 <body>
 	<div id = 'container'>
-	
-<div class = 'header'><%= link_to 'DesignFlaw', posts_url %></div>
-<h3>A blog about coding, design, and the written word.</h3>
+		<div id="main_content">
+			<div class = 'header'><%= link_to 'DesignFlaw', posts_url %></div>
+			<h3>A blog about coding, design, and the written word.</h3>
 
-<a href="http://about.me/arvindang">About Me</a> | <a href="http://twitter.com/arvindang">Tweet Me</a> |
+			<a href="http://about.me/arvindang">About Me</a> |
 
-<% flash.each do |key, value| %>	
-<div class = 'notice'><%= value %></div>
-<% end %>
+			<% flash.each do |key, value| %>	
+			<div class = 'notice'><%= value %></div>
+			<% end %>
 
 
-	<% if User.find_by_id(session[:id]) %>
-		<%= link_to "Logout", logout_url, :method => :delete %>
-	<% else %>
-		<%= link_to "Login", login_url %>
-	<% end %> |
+				<% if User.find_by_id(session[:id]) %>
+					<%= link_to "Logout", logout_url, :method => :delete %>
+				<% else %>
+					<%= link_to "Login", login_url %>
+				<% end %> |
 
-<%= yield %>
-
-</div></body>
+			<%= yield %>
+			
+			</div>
+			<div id="sidebar">
+				
+				<h4><%= link_to "Recent Tweets:", "http://twitter.com/arvindang" %></h4>
+				
+				<div id="tweets">
+					<% tweets.each do |t| %>
+					    <%= markdown(tweet_handle_parser(t.text)) %></p>
+					<% end %>
+				</div>
+				
+				<h4><%= link_to "Subscribe to RSS", "http://designflaw.net/posts.rss" %></h4>
+				
+			</div>
+			<div class="clr"></div>
+	</div>
+</body>
 </html>

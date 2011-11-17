@@ -25,4 +25,9 @@ class Post < ActiveRecord::Base
     @posts[@next_index]
   end
   
+  # def public_timeline(options = { :count => 5 })
+  #    response = get('1/statuses/public_timeline', options)
+  #    format.to_s.downcase == 'xml' ? response['statuses'] : response
+  #  end
+  
 end

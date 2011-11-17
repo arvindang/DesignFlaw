@@ -6,18 +6,37 @@
  *= require_tree . 
 */
 
+.clr {clear: both;}
 #new_post { display: none; }
 
 #container {
-	
+/*	background: green;*/
 	width: 960px;
-	margin: 100px auto;			
-	
+	margin: 100px auto;	
 }
 
+#main_content {
+/*	background: orange;*/
+	width: 680px;
+	float: left;
+	padding: 0px 10px;
+}
+
+#sidebar {
+/*	background: purple;*/
+	width: 240px;
+	height: 400px;
+	float: right;
+	padding: 94px 10px 10px 10px;
+/*	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-ie-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px;*/
+}
 #post_body {
 	
-	width: 960px;
+/*	width: 960px;*/
 	
 }
 
@@ -46,4 +65,3 @@
 	text-align:center ;
 	
 }
-

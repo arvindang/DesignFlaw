@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
-  
+
   before_filter :require_user, :only => [:new, :edit, :update, :delete]
   
   def index
@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     @post = Post.new
 
     respond_to do |format|
+      format.js
       format.html # index.html.erb
       format.json { render :json => @posts }
       format.rss { render :layout => false }
