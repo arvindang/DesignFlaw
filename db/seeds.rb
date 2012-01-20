@@ -7,4 +7,4 @@
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
 User.destroy_all
-users = User.create([{:username => '#'}, {:password => '#'}, {:password_confirmation => '#'} ])
+users = User.create([{:username => 'adangit'}, {:password => 'dogf00d'}, {:password_confirmation => 'dogf00d'} ])
